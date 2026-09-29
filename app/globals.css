@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+:root { --ink: #20201e; --soft: #686861; --paper: #f7f7f4; --line: #deded8; --sage: #e0e4dc; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--paper); color: var(--ink); font-family: Arial, Helvetica, sans-serif; }
+::selection { background: #d6d9d1; }
+.display { font-family: Georgia, 'Times New Roman', serif; letter-spacing: -.055em; }
+.eyebrow { font-size: .69rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; color: var(--soft); }
+.rule { border-color: var(--line); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
