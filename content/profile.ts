@@ -1,5 +1,5 @@
 export const profile = {
-  name: "jiejiejie",
+  name: "王豪杰",
   tagline: "A little space on the internet.",
   intro: "I’m learning, building, and figuring things out.",
   about: "[This is a placeholder for a short note about who you are, what pulls at your curiosity, and the kind of days you hope to make.]",

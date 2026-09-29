@@ -9,9 +9,15 @@ export function Hero() {
 
   return <section id="top" className="relative flex min-h-screen items-center overflow-hidden px-6 pt-14 md:px-10">
     <div className="hero-atmosphere" aria-hidden="true" />
+    <svg className="hero-orbit" viewBox="0 0 960 560" fill="none" aria-hidden="true">
+      <path d="M44 388C91 167 568 105 718 247c105 100-72 208-360 230C158 493 9 470 44 388Z" />
+      <path d="M197 446C418 506 768 436 866 282" />
+    </svg>
+    <span className="hero-star hero-star-one" aria-hidden="true">✦</span>
+    <span className="hero-star hero-star-two" aria-hidden="true">✦</span>
     <div className="relative z-10 mx-auto w-full max-w-7xl pb-8">
       <motion.p {...enter(0.08)} className="eyebrow mb-8 md:mb-10">Personal corner / 01</motion.p>
-      <motion.h1 {...enter(0.18)} className="display max-w-6xl text-[clamp(4.6rem,14vw,13.4rem)] leading-[.78] text-[#1d1d1f]">{profile.name}.</motion.h1>
+      <motion.h1 {...enter(0.18)} className="display hero-name max-w-6xl text-[clamp(5rem,17vw,15.5rem)] leading-[.72] text-[#1d1d1f]">{profile.name}.</motion.h1>
       <motion.div {...enter(0.4)} className="mt-10 flex flex-col gap-7 md:mt-14 md:flex-row md:items-end md:justify-between">
         <p className="max-w-md text-xl leading-relaxed tracking-[-.025em] text-[#5e606c] md:text-[1.6rem]">{profile.tagline}</p>
         <p className="max-w-50 text-sm leading-relaxed text-[#777985] md:text-right">A soft collection of things I’m learning, building, and keeping close.</p>

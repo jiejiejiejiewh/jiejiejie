@@ -17,14 +17,22 @@ body { min-height: 100vh; margin: 0; color: var(--ink); background: linear-gradi
 ::selection { background: #dce8f8; color: var(--ink); }
 
 a { text-underline-offset: 0.25em; }
-.display { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 500; letter-spacing: -0.065em; }
+.display { font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; font-weight: 500; letter-spacing: -0.065em; }
+.hero-name { font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif; font-weight: 700; letter-spacing: -.115em; }
 .eyebrow { color: var(--muted); font-size: .66rem; font-weight: 650; letter-spacing: .15em; text-transform: uppercase; }
 .rule { border-color: var(--line); }
 .ambient-field { position: fixed; z-index: 0; inset: -18%; pointer-events: none; overflow: hidden; opacity: .9; background: radial-gradient(ellipse at 13% 18%, rgba(213, 231, 255, .82) 0, rgba(221, 235, 255, .42) 18%, transparent 39%), radial-gradient(ellipse at 83% 13%, rgba(249, 222, 241, .7) 0, rgba(248, 221, 240, .28) 18%, transparent 39%), radial-gradient(ellipse at 52% 82%, rgba(233, 224, 255, .53) 0, transparent 34%); filter: blur(36px); animation: ambient-drift 32s ease-in-out infinite alternate; }
 .ambient-field::after { content: ""; position: absolute; inset: 12%; background: radial-gradient(circle at 70% 56%, rgba(221, 235, 255, .28), transparent 25%); filter: blur(40px); animation: ambient-pulse 18s ease-in-out infinite alternate; }
 .glass-panel { background: linear-gradient(135deg, rgba(255, 255, 255, .68), rgba(255, 255, 255, .35)); border: 1px solid rgba(255, 255, 255, .76); box-shadow: 0 18px 55px rgba(73, 83, 112, .07), inset 0 1px rgba(255, 255, 255, .58); }
 .hero-atmosphere { position: absolute; width: min(66vw, 58rem); height: min(52vw, 43rem); top: 50%; left: 43%; transform: translate(-50%, -50%); border-radius: 50%; background: radial-gradient(circle at 35% 42%, rgba(224, 235, 255, .78), transparent 42%), radial-gradient(circle at 67% 38%, rgba(251, 225, 242, .7), transparent 41%), radial-gradient(circle at 51% 75%, rgba(235, 229, 255, .58), transparent 47%); filter: blur(13px); opacity: .9; animation: hero-glow 17s ease-in-out infinite alternate; }
+.hero-orbit { position: absolute; z-index: 1; width: min(56rem, 84vw); height: auto; left: max(1rem, calc(50% - 44rem)); top: 29%; overflow: visible; opacity: .48; pointer-events: none; }
+.hero-orbit path { stroke: rgba(81, 91, 111, .42); stroke-width: 1.15; stroke-linecap: round; }
+.hero-star { position: absolute; z-index: 2; color: #363944; line-height: 1; pointer-events: none; text-shadow: 0 2px 20px rgba(255,255,255,.9); animation: star-twinkle 7s ease-in-out infinite alternate; }
+.hero-star-one { left: min(50%, calc(50% - 1rem)); top: 34%; font-size: clamp(1.8rem, 3.4vw, 3.8rem); }
+.hero-star-two { left: min(61%, calc(50% + 11rem)); top: 51%; color: rgba(55, 58, 68, .66); font-size: clamp(.8rem, 1.5vw, 1.35rem); animation-delay: -3s; }
+@keyframes star-twinkle { from { transform: scale(.9) rotate(-4deg); opacity: .55; } to { transform: scale(1.08) rotate(5deg); opacity: .92; } }
 @keyframes ambient-drift { from { transform: translate3d(-1.5%, -1%, 0) scale(1); } to { transform: translate3d(2%, 1.5%, 0) scale(1.04); } }
 @keyframes ambient-pulse { from { opacity: .35; transform: scale(.95); } to { opacity: .7; transform: scale(1.08); } }
 @keyframes hero-glow { from { transform: translate(-52%, -50%) scale(.96); opacity: .68; } to { transform: translate(-46%, -50%) scale(1.04); opacity: .94; } }
+@media (max-width: 640px) { .hero-orbit { top: 32%; left: -5%; width: 120%; opacity: .34; } .hero-star-one { left: 72%; top: 38%; } .hero-star-two { display: none; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
