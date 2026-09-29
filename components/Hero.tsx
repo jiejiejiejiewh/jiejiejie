@@ -8,7 +8,8 @@ export function Hero() {
   const enter = (delay: number) => ({ initial: reduced ? false : { opacity: 0, y: 24, filter: "blur(8px)" }, animate: { opacity: 1, y: 0, filter: "blur(0px)" }, transition: { duration: 1.15, delay, ease: [0.22, 1, 0.36, 1] as const } });
 
   return <section id="top" className="relative flex min-h-screen items-center overflow-hidden px-6 pt-14 md:px-10">
-    <div className="mx-auto w-full max-w-7xl pb-8">
+    <div className="hero-atmosphere" aria-hidden="true" />
+    <div className="relative z-10 mx-auto w-full max-w-7xl pb-8">
       <motion.p {...enter(0.08)} className="eyebrow mb-8 md:mb-10">Personal corner / 01</motion.p>
       <motion.h1 {...enter(0.18)} className="display max-w-6xl text-[clamp(4.6rem,14vw,13.4rem)] leading-[.78] text-[#1d1d1f]">{profile.name}.</motion.h1>
       <motion.div {...enter(0.4)} className="mt-10 flex flex-col gap-7 md:mt-14 md:flex-row md:items-end md:justify-between">
